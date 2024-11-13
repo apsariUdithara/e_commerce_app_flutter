@@ -1,84 +1,57 @@
 import 'package:intl/intl.dart';
-import 'package:flutter_libphonenumber_platform_interface/flutter_libphonenumber_platform_interface.dart';
 
 class EFormatter {
-  // Initialize the phone formatter once during app startup
-  static Future<void> initPhoneFormatter() async {
-    // Corrected to use the platform interface's instance
-    await FlutterLibphonenumberPlatform.instance.init();
-  }
-
-  // Formats a DateTime object to a string with the format "dd-MM-yyyy"
   static String formatDate(DateTime? date) {
     date ??= DateTime.now();
-    return DateFormat("dd-MM-yyyy").format(date);
+    final onlyDate = DateFormat('dd/MM/yyyy').format(date);
+    final onlyTime = DateFormat('hh:mm').format(date);
+    return '$onlyDate at $onlyTime';
   }
 
-  // Formats a double amount to a currency string with the specified locale and symbol
-  static String formatCurrency(double amount, {String locale = 'en_US', String symbol = '\$'}) {
-    return NumberFormat.currency(locale: locale, symbol: symbol).format(amount);
+  static String formatCurrency(double amount) {
+    return NumberFormat.currency(locale: 'en_US', symbol: '\$').format(amount); // Customize the currency locale and symbol as needed
   }
 
-  // Formats a phone number using flutter_libphonenumber for international support
-  static String formatPhoneNumberSync(String phoneNumber, {String isoCode = 'US'}) {
-    // Get the country configuration from CountryManager (corrected)
-    final countries = CountryManager().countries;
-    final country = countries.firstWhere(
-          (country) => country.countryCode == isoCode,
-      orElse: () => CountryWithPhoneCode(
-        phoneCode: '1',
-        countryCode: 'US',
-        exampleNumberMobileNational: '(123) 456-7890',
-        exampleNumberFixedLineNational: '(123) 456-7890',
-        phoneMaskMobileNational: '000-000-0000',
-        phoneMaskFixedLineNational: '000-000-0000',
-        exampleNumberMobileInternational: '+1 123-456-7890',
-        exampleNumberFixedLineInternational: '+1 123-456-7890',
-        phoneMaskMobileInternational: '+0 000-000-0000',
-        phoneMaskFixedLineInternational: '+0 000-000-0000',
-        countryName: 'United States',
-      ),
-    );
-
-    return FlutterLibphonenumberPlatform.instance.formatNumberSync(
-      phoneNumber,
-      country: country,
-      phoneNumberType: PhoneNumberType.mobile,
-      phoneNumberFormat: PhoneNumberFormat.international,
-      inputContainsCountryCode: phoneNumber.startsWith('+'),
-    );
-  }
-
-  // Asynchronously formats a phone number and checks if it's valid
-  static Future<String> formatPhoneNumber(String phoneNumber, {String isoCode = 'US'}) async {
-    final countries = CountryManager().countries;
-    final country = countries.firstWhere(
-          (country) => country.countryCode == isoCode,
-      orElse: () => CountryWithPhoneCode(
-        phoneCode: '1',
-        countryCode: 'US',
-        exampleNumberMobileNational: '(123) 456-7890',
-        exampleNumberFixedLineNational: '(123) 456-7890',
-        phoneMaskMobileNational: '000-000-0000',
-        phoneMaskFixedLineNational: '000-000-0000',
-        exampleNumberMobileInternational: '+1 123-456-7890',
-        exampleNumberFixedLineInternational: '+1 123-456-7890',
-        phoneMaskMobileInternational: '+0 000-000-0000',
-        phoneMaskFixedLineInternational: '+0 000-000-0000',
-        countryName: 'United States',
-      ),
-    );
-
-    try {
-      final result = await FlutterLibphonenumberPlatform.instance.getFormattedParseResult(
-        phoneNumber,
-        country,
-        phoneNumberType: PhoneNumberType.mobile,
-        phoneNumberFormat: PhoneNumberFormat.international,
-      );
-      return result?.formattedNumber ?? "Invalid number";
-    } catch (e) {
-      return "Error formatting number";
+  static String formatPhoneNumber(String phoneNumber) {
+    // Assuming a 10-digit US phone number format: (123) 456-7890
+    if (phoneNumber.length == 10) {
+      return '(${phoneNumber.substring(0, 3)}) ${phoneNumber.substring(3, 6)} ${phoneNumber.substring(6)}';
+    } else if (phoneNumber.length == 11) {
+      return '(${phoneNumber.substring(0, 4)}) ${phoneNumber.substring(4, 7)} ${phoneNumber.substring(7)}';
     }
+    // Add more custom phone number formatting logic for different formats if needed.
+    return phoneNumber;
+  }
+
+  // Not fully tested.
+  static String internationalFormatPhoneNumber(String phoneNumber) {
+    // Remove any non-digit characters from the phone number
+    var digitsOnly = phoneNumber.replaceAll(RegExp(r'\D'), '');
+
+    // Extract the country code from the digitsOnly
+    String countryCode = '+${digitsOnly.substring(0, 2)}';
+    digitsOnly = digitsOnly.substring(2);
+
+    // Add the remaining digits with proper formatting
+    final formattedNumber = StringBuffer();
+    formattedNumber.write('($countryCode) ');
+
+    int i = 0;
+    while (i < digitsOnly.length) {
+      int groupLength = 2;
+      if (i == 0 && countryCode == '+1') {
+        groupLength = 3;
+      }
+
+      int end = i + groupLength;
+      formattedNumber.write(digitsOnly.substring(i, end));
+
+      if (end < digitsOnly.length) {
+        formattedNumber.write(' ');
+      }
+      i = end;
+    }
+
+    return formattedNumber.toString();
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class TSizes {
+class ESizes {
   // Padding and margin sizes
-  static const double x = 1.0;
+  static const double xs = 1.0;
   static const double s = 8.8;
   static const double md = 16.0;
   static const double lg = 24.0;
@@ -24,10 +24,19 @@ class TSizes {
   static const double buttonRadius = 12.8;
   static const double buttonWidth = 120.8;
 
+  // AppBar height
+  static const double appBarHeight = 56.0;
+
+
+  // Image sizes
+  static const double imageThumbSize = 80.0;
+
   // Spacing
   static const double defaultSpace = 24.8;
   static const double spaceBtwItems = 16.0;
   static const double spaceBtwSections = 32.0;
+
+
 
   // Border radius
   static const double borderRadiusSm = 4.8;
@@ -61,4 +70,10 @@ class TSizes {
 
   // Grid view spacing
   static const double gridViewSpacing = 16.8;
+
+  // Responsive Screen Sizes
+  static const int desktopScreenSize = 1366;
+  static const int tabletScreenSize = 768;
+  static const int mobileScreenSize = 360;
+  static const int customScreenSize = 1100;
 }

@@ -13,14 +13,3 @@ key.properties
 **/*.jks
 
 
-# Android build output
-android/.kotlin/sessions/
-/app/build/
-
-# Exclude all drawable directories and night mode drawables
-android/app/src/main/res/drawable-*/
-android/app/src/main/res/drawable-night-*/
-
-# Exclude specific values directories for Android 12+
-android/app/src/main/res/values-night-v31/
-android/app/src/main/res/values-v31/
