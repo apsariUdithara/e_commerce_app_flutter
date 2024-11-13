@@ -21,6 +21,7 @@ dependencies:
   logger: ^2.0.1
   url_launcher: ^6.1.12
   flutter_libphonenumber: ^2.5.0
+  flutter_native_splash: ^2.4.2
 
   # Icons
   iconsax: ^0.0.8
