@@ -19,26 +19,26 @@ dependencies:
   http: ^1.1.0
   logger: ^2.0.1
   flutter_native_splash: ^2.4.2
-  intl: ^0.19.0
+  intl: ^0.20.0
   lottie: ^3.1.0
   shimmer: ^3.0.0
   clipboard: ^0.1.3
   image_picker: ^1.1.0
   url_launcher: ^6.2.6
-  flutter_dropzone: ^3.0.7
+  flutter_dropzone: ^4.2.0
   flutter_typeahead: ^5.2.0
   connectivity_plus: ^6.0.3
   multi_select_flutter: ^4.1.3
   cached_network_image: ^3.3.0
-  smooth_page_indicator: ^1.1.0
+  smooth_page_indicator: ^1.2.0+3
 
 
   # Web Specific
   web: ^0.5.1
   html: ^0.15.4
-  fl_chart: ^0.67.0
+  fl_chart: ^0.69.0
   data_table_2: ^2.5.12
-  url_strategy: ^0.2.0
+  url_strategy: ^0.3.0
   universal_html: ^2.2.4
 
   # Icons
@@ -73,9 +73,9 @@ flutter:
   #--------------LOCAL ASSETS-----------------#
   assets:
     - assets/logos/
+    - assets/images/on_boarding_images/
     - assets/images/content/
     - assets/images/animations/
-    - assets/icons/payment_methods/
 
   #-----------------LOCAL FONTS-----------------#
   fonts:

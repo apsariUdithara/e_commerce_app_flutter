@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: fl_chart
-      sha256: "2b7c1f5d867da9a054661641c8f499c55c47c39acccb97b3bc673f5fa9a39e74"
+      sha256: "94307bef3a324a0d329d3ab77b2f0c6e5ed739185ffc029ed28c0f9b019ea7ef"
       url: "https://pub.dev"
     source: hosted
-    version: "0.67.0"
+    version: "0.69.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -370,10 +370,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_dropzone
-      sha256: b399c60411f9bf9c4c2f97933c6a3a185859e75aade8897831e76cee4346c8e1
+      sha256: "8b803b23c506109e2e742b1ef69a1342af88a1a332aee8f41fbd967acbb5f1e6"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.7"
+    version: "4.2.0"
   flutter_dropzone_platform_interface:
     dependency: transitive
     description:
@@ -386,10 +386,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_dropzone_web
-      sha256: c5a0fdb63b7216352a01761ec1b6eba1982e49541e60675735e2d3d95e207b19
+      sha256: "03b216f9443add6ad1d075ab513a354a47edf3d1b87d830a8ed314f0d3a2beac"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.13"
+    version: "4.2.0"
   flutter_keyboard_visibility:
     dependency: transitive
     description:
@@ -604,18 +604,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "99f282cb0e02edcbbf8c6b3bbc7c90b65635156c412e58f3975a7e55284ce685"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
+    version: "0.20.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -1057,10 +1049,10 @@ packages:
     dependency: "direct main"
     description:
       name: url_strategy
-      sha256: "42b68b42a9864c4d710401add17ad06e28f1c1d5500c93b98c431f6b0ea4ab87"
+      sha256: "6eff69fa0900b731a23552b38b54389f399d247dbb0998f2cbdf25bef6790a7c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.3.0"
   uuid:
     dependency: transitive
     description:
