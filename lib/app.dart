@@ -1,7 +1,7 @@
 import 'package:e_commerce_app_flutter/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:e_commerce_app_flutter/features/authentication/screens/onboarding.dart';
+import 'package:e_commerce_app_flutter/features/authentication/screens/onboarding/onboarding.dart';
 
 //// -- Use this Class to setup themes , initial Bindings , any animations and much
 class App extends StatelessWidget {
