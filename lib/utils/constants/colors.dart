@@ -4,8 +4,9 @@ class EColors {
   EColors._();
 
   // App Basic colors
-  static const Color primaryColor = Color(0xFF4b68ff);
+  static const Color primaryColor = Color(0xFF4434ab);
   static const Color secondaryColor = Color(0xFFFFE24B);
+  static const Color tertiaryColor = Color(0xFF5541d6);
   static const Color accent = Color(0xFFb0c7ff);
 
   //Gradient Colors

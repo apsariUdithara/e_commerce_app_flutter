@@ -6,13 +6,11 @@ import 'package:e_commerce_app_flutter/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -36,7 +34,6 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: ESizes.spaceBtwSections),
               ////Social Buttons
               const ESocialButtons(),
-
             ],
           ),
         ),
@@ -44,5 +41,3 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
-
-

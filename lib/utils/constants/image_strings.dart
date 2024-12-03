@@ -43,9 +43,9 @@ class EImages{
   static const String creatingProductIllustration = "assets/images/animations/creating-product.gif";
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration = "assets/images/animations/sammy-line-sale.png";
-  static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.png";
+  static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.gif";
   static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.png";
-  static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
+  static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.gif";
   static const String uploadingImageIllustration = "assets/images/animations/uploading-files-from-computer-to-cloud-storage.gif";
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
