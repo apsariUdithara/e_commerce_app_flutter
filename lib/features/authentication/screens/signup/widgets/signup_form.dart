@@ -1,7 +1,10 @@
+import 'package:e_commerce_app_flutter/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:e_commerce_app_flutter/features/authentication/screens/signup/widgets/terms_conditions_ckeckbox.dart';
+import 'package:e_commerce_app_flutter/utils/validators/validation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 
 
 import '../../../../../utils/constants/sizes.dart';
@@ -18,11 +21,15 @@ class ESignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
         child: Column(children: [
           Row(children: [
             Expanded(
               child: TextFormField(
+                controller: controller.firstName,
+                validator: (value) => TValidator.validateEmptyText('First name', value),
                 expands: false,
                 decoration: const InputDecoration(
                   labelText: ETexts.firstName,
@@ -33,6 +40,8 @@ class ESignupForm extends StatelessWidget {
             const SizedBox(width: ESizes.spaceBtwInputFields),
             Expanded(
               child: TextFormField(
+                controller: controller.lastName,
+                validator: (value) => TValidator.validateEmptyText('Last name', value),
                 expands: false,
                 decoration: const InputDecoration(
                   labelText: ETexts.lastName,
@@ -46,6 +55,8 @@ class ESignupForm extends StatelessWidget {
           ////Username
 
           TextFormField(
+            controller: controller.username,
+            validator: (value) => TValidator.validateEmptyText('Username', value),
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.username,
@@ -55,6 +66,8 @@ class ESignupForm extends StatelessWidget {
 
           ////Email
           TextFormField(
+            controller: controller.email,
+            validator: (value) => TValidator.validateEmail(value),
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.email,
@@ -66,6 +79,8 @@ class ESignupForm extends StatelessWidget {
 
           ////Phone number
           TextFormField(
+            controller: controller.phoneNumber,
+            validator: (value) => TValidator.validatePhoneNumber(value),
             expands: false,
             decoration: const InputDecoration(
               labelText: ETexts.phoneNo,
@@ -75,14 +90,23 @@ class ESignupForm extends StatelessWidget {
           const SizedBox(height: ESizes.spaceBtwInputFields),
 
           ////Password
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: ETexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
-            ),
+          Obx(
+              () => TextFormField(
+                controller: controller.password,
+                validator: (value) => TValidator.validatePassword(value),
+                expands: false,
+                obscureText: controller.hidePassword.value,
+                decoration: const InputDecoration(
+                  labelText: ETexts.password,
+                  prefixIcon: Icon(Iconsax.password_check),
+                  suffixIcon: Icon(Iconsax.eye_slash
+                      //onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                      //icon: const Icon(Iconsax.eye_slash)
+                  ),
+                ),
+              ),
           ),
+
           const SizedBox(height: ESizes.spaceBtwSections),
 
           ////TermsConditions checkbox
@@ -94,7 +118,8 @@ class ESignupForm extends StatelessWidget {
           SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text(ETexts.createAccount))),
+                  onPressed: () => controller.signup(),
+                  child: const Text(ETexts.createAccount))),
         ]));
   }
 }
