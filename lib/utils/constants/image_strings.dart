@@ -1,8 +1,8 @@
 class EImages{
 
   //App Logos
-  static const String darkappLogo = 'assets/logos/images/e-store-splash-logo-black.png';
-  static const String lightappLogo = 'assets/logos/images/e-store-splash-logo-white.png';
+  static const String darkappLogo = 'assets/logos/e-store-splash-logo-black.png';
+  static const String lightappLogo = 'assets/logos/e-store-splash-logo-white.png';
 
 
   // -- Default Images

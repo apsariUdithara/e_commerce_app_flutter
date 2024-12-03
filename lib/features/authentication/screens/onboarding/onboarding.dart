@@ -2,7 +2,7 @@ import 'package:e_commerce_app_flutter/features/authentication/screens/onboardin
 import 'package:e_commerce_app_flutter/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:e_commerce_app_flutter/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:e_commerce_app_flutter/utils/constants/image_strings.dart';
-import 'package:e_commerce_app_flutter/utils/constants/texts.dart';
+import 'package:e_commerce_app_flutter/utils/constants/text_strings.dart';
 import 'package:e_commerce_app_flutter/utils/device/device_utility.dart';
 import 'package:e_commerce_app_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

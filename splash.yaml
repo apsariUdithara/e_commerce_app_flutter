@@ -1,7 +1,8 @@
 flutter_native_splash:
   color: "#FFFFFF"
   color_dark: "#272727"
-  image: assets/logos/e-store-splash-logo.png
+  image: assets/logos/e-store-splash-logo-black.png
+  image_dark: assets/logos/e-store-splash-logo-white.png
 
 
 
@@ -9,7 +10,8 @@ flutter_native_splash:
   android_12:
     color: "#FFFFFF"
     color_dark: "#272727"
-    image: assets/logos/e-store-splash-logo.png
+    image: assets/logos/e-store-splash-logo-black.png
+    image_dark: assets/logos/e-store-splash-logo-white.png
 
 
 
