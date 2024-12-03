@@ -1,18 +1,13 @@
-import 'package:e_commerce_app_flutter/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app_flutter/common/widgets/login_signup/form_divider.dart';
 import 'package:e_commerce_app_flutter/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:e_commerce_app_flutter/features/authentication/screens/login/widgets/login_header.dart';
-import 'package:e_commerce_app_flutter/utils/constants/colors.dart';
 import 'package:e_commerce_app_flutter/utils/constants/text_strings.dart';
 import 'package:e_commerce_app_flutter/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/styles/spacing_styles.dart';
 import '../../../../common/widgets/login_signup/social_buttons.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -12,7 +12,7 @@ class EAppBarTheme {
     foregroundColor: Colors.transparent,
     iconTheme: IconThemeData(color: Colors.white,size:24),
     actionsIconTheme: IconThemeData(color: Colors.white,size:24),
-    titleTextStyle: const TextStyle(
+    titleTextStyle: TextStyle(
       color: Colors.white,
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
@@ -29,7 +29,7 @@ class EAppBarTheme {
     foregroundColor: Colors.transparent,
     iconTheme: IconThemeData(color: Colors.black,size:24),
     actionsIconTheme: IconThemeData(color: Colors.white,size:24),
-    titleTextStyle: const TextStyle(
+    titleTextStyle: TextStyle(
       color: Colors.white,
       fontSize: 18.0,
       fontWeight: FontWeight.w600,

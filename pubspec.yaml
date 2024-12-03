@@ -73,6 +73,7 @@ flutter:
   #--------------LOCAL ASSETS-----------------#
   assets:
     - assets/logos/
+    - assets/images/user/
     - assets/images/on_boarding_images/
     - assets/images/content/
     - assets/images/animations/

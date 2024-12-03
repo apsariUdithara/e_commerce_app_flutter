@@ -113,7 +113,7 @@ class EHelperFunctions {
       return text;
   }
     else{
-      return text.substring(0,maxLength)+'...';
+      return '${text.substring(0,maxLength)}...';
     }
 }
 

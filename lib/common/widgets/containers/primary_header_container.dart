@@ -15,30 +15,26 @@ class EPrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ECurvedEdgeWidget(
-      child: SizedBox(
-        //I changes from 400 to 350
-        height: 350,
-        child: Container(
-          color: EColors.primaryColor,
-          child: Stack(
-            children: [
-              Positioned(
-                top: -150,
-                right: -250,
-                child: ECircularContainer(
-                  backgroundColor: EColors.textWhite.withOpacity(0.1),
-                ),
+      child: Container(
+        color: EColors.primaryColor,
+        child: Stack(
+          children: [
+            Positioned(
+              top: -150,
+              right: -250,
+              child: ECircularContainer(
+                backgroundColor: EColors.textWhite.withOpacity(0.1),
               ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: ECircularContainer(
-                  backgroundColor: EColors.textWhite.withOpacity(0.1),
-                ),
+            ),
+            Positioned(
+              top: 100,
+              right: -300,
+              child: ECircularContainer(
+                backgroundColor: EColors.textWhite.withOpacity(0.1),
               ),
-              child,
-            ],
-          ),
+            ),
+            child,
+          ],
         ),
       ),
     );

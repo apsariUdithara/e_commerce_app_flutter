@@ -1,7 +1,6 @@
 import 'package:e_commerce_app_flutter/common/styles/spacing_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../features/authentication/screens/login/login.dart';
 import '../../../utils/constants/sizes.dart';

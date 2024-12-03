@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constants/colors.dart';
@@ -24,7 +23,7 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
         const SizedBox(width: ESizes.spaceBtwItems),
         Text.rich(TextSpan(children: [
           TextSpan(
-              text: '${ETexts.iAgreeTo}',
+              text: ETexts.iAgreeTo,
               style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
               text: '${ETexts.privacyPolicy} ',
@@ -36,7 +35,7 @@ class ETermsAndConditionsCheckbox extends StatelessWidget {
                 dark ? EColors.white : EColors.primaryColor,
               )),
           TextSpan(
-              text: '${ETexts.and}',
+              text: ETexts.and,
               style: Theme.of(context).textTheme.bodySmall),
           TextSpan(
               text: ETexts.termsOfUse,
