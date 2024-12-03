@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_flutter/bindings/general_bindings.dart';
 import 'package:e_commerce_app_flutter/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -14,7 +15,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme:AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      initialBinding: GeneralBindings(),
+      home: const Scaffold(backgroundColor: Colors.purple, body: Center(child: CircularProgressIndicator(color: Colors.white))),
     );
   }
 }
