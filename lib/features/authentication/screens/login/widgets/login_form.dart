@@ -1,3 +1,5 @@
+import 'package:e_commerce_app_flutter/features/authentication/controllers/login/login_controller.dart';
+import 'package:e_commerce_app_flutter/utils/validators/validation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +19,10 @@ class ELoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.loginFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(
             vertical: ESizes.spaceBtwSections),
@@ -25,6 +30,8 @@ class ELoginForm extends StatelessWidget {
           children: [
             // Email
             TextFormField(
+              controller: controller.email,
+              validator: (value) => TValidator.validateEmail(value),
               decoration: InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: ETexts.email,
@@ -32,11 +39,20 @@ class ELoginForm extends StatelessWidget {
             ),
             const SizedBox(height: ESizes.spaceBtwInputFields),
             // Password
-            TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                labelText: ETexts.password,
-                suffixIcon: Icon(Iconsax.eye_slash),
+            Obx(
+                  () => TextFormField(
+                controller: controller.password,
+                validator: (value) => TValidator.validatePassword(value),
+                expands: false,
+                obscureText: controller.hidePassword.value,
+                decoration: const InputDecoration(
+                  labelText: ETexts.password,
+                  prefixIcon: Icon(Iconsax.password_check),
+                  suffixIcon: Icon(Iconsax.eye_slash
+                    //onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                    //icon: const Icon(Iconsax.eye_slash)
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: ESizes.spaceBtwInputFields / 2),
@@ -47,7 +63,7 @@ class ELoginForm extends StatelessWidget {
                 // Remember Me
                 Row(
                   children: [
-                    Checkbox(value: true, onChanged: (value) {}),
+                    Obx(() => Checkbox(value: controller.rememberMe.value, onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value)),
                     const Text(ETexts.rememberMe),
                   ],
                 ),
@@ -63,7 +79,7 @@ class ELoginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () =>Get.to(()=>const NavigationMenu()), child: Text(ETexts.signIn))),
+                    onPressed: () => controller.emailAndPasswordSignIn(), child: Text(ETexts.signIn))),
             const SizedBox(height: ESizes.spaceBtwItems),
             // Create Account
             SizedBox(
