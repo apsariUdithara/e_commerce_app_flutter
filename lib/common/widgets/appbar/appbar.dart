@@ -34,6 +34,10 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
     final dark = EHelperFunctions.isDarkMode(context);
     return AppBar(
       automaticallyImplyLeading: false,
+      //
+      elevation: 0, // Removes shadow
+      backgroundColor: Colors.transparent, // Makes AppBar transparent
+      //
       leading: showBackArrow
           ? IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? EColors.white : EColors.dark))
           : leadingIcon != null
@@ -47,3 +51,4 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(EDeviceUtils.getAppBarHeight());
 }
+

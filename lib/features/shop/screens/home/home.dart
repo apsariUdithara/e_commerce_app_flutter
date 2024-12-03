@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_flutter/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/containers/primary_header_container.dart';
@@ -12,8 +13,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             EPrimaryHeaderContainer(
-              child: Container(
-                child: Container(),
+              child: Column(
+                children: [
+                  EHomeAppBar(),
+                ],
               ),
             ),
           ],
@@ -22,3 +25,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
