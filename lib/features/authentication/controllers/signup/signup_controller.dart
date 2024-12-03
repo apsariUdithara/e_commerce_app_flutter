@@ -3,6 +3,7 @@ import 'package:e_commerce_app_flutter/data/repositories/user/user_repository.da
 import 'package:e_commerce_app_flutter/features/authentication/controllers/signup/userModel.dart';
 import 'package:e_commerce_app_flutter/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_commerce_app_flutter/utils/constants/image_strings.dart';
+import 'package:e_commerce_app_flutter/utils/constants/text_strings.dart';
 import 'package:e_commerce_app_flutter/utils/helpers/network_manager.dart';
 import 'package:e_commerce_app_flutter/utils/popups/full_screen_loader.dart';
 import 'package:e_commerce_app_flutter/utils/popups/loaders.dart';
@@ -79,7 +80,7 @@ class SignupController extends GetxController {
       );
 
       //Move to verify email screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
 
     } catch (e) {
       //Show error
