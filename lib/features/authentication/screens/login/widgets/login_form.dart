@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../../navigation_menu.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../password_configuration/forget_password.dart';
@@ -62,7 +63,7 @@ class ELoginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text(ETexts.signIn))),
+                    onPressed: () =>Get.to(()=>const NavigationMenu()), child: Text(ETexts.signIn))),
             const SizedBox(height: ESizes.spaceBtwItems),
             // Create Account
             SizedBox(
