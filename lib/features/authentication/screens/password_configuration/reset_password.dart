@@ -1,9 +1,7 @@
-import 'package:e_commerce_app_flutter/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
