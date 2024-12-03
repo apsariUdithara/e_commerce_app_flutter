@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 class ECustomCurvedEdges extends CustomClipper<Path> {
   
 
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  // @override
+  // Widget build(BuildContext context) {
+  //   return const Placeholder();
+  // }
 
   @override
   Path getClip(Size size) {
