@@ -56,11 +56,11 @@ class ESizes {
   static const double spaceBtwInputFields = 16.0;
 
   // Card sizes
-  static const double cardRadiusLg = 16.8;
+  static const double cardRadiusLg = 16.0;
   static const double cardRadiusMd = 12.0;
-  static const double cardRadiusSm = 10.8;
+  static const double cardRadiusSm = 10.0;
   static const double cardRadiusXs = 6.0;
-  static const double cardElevation = 2.8;
+  static const double cardElevation = 2.0;
 
   // Image carousel height
   static const double imageCarouselHeight = 208.0;
