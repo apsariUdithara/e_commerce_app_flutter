@@ -10,7 +10,6 @@ import '../../../../../../utils/constants/enums.dart';
 import '../../../../../../utils/constants/sizes.dart';
 import 'e_rounded_image.dart';
 
-
 /// Widget for uploading images with optional editing functionality
 class EImageUploader extends StatelessWidget {
   const EImageUploader({
@@ -80,11 +79,10 @@ class EImageUploader extends StatelessWidget {
                 backgroundColor: EColors.primaryBackground,
               )
             : ERoundedImage(
-                image: image,
+                imageUrl: image ?? '',
                 width: width,
                 height: height,
-                imageType: imageType,
-                memoryImage: memoryImage,
+                isNetworkImage: imageType == ImageType.network,
                 backgroundColor: EColors.primaryBackground,
               ),
         // Display the edit icon button on top of the image
