@@ -1,17 +1,14 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_commerce_app_flutter/common/widgets/containers/circular_container.dart';
+import 'package:e_commerce_app_flutter/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app_flutter/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app_flutter/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app_flutter/features/shop/screens/home/widgets/promo_slider.dart';
-import 'package:e_commerce_app_flutter/utils/constants/image_strings.dart';
 import 'package:e_commerce_app_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/containers/primary_header_container.dart';
 import '../../../../common/widgets/containers/search_container.dart';
-import '../../../../common/widgets/images/e_rounded_image.dart';
+import '../../../../common/widgets/products/cards/product_card_vertical.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
-import '../../../../utils/constants/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -60,7 +57,15 @@ class HomeScreen extends StatelessWidget {
             ////Body
             Padding(
               padding: const EdgeInsets.all(ESizes.defaultSpace),
-              child: EPromoSlider(),
+              child: Column(
+                children: [
+                  EPromoSlider(),
+                  const SizedBox(height: ESizes.spaceBtwSections),
+
+                  ///Popular Products
+                  EGridLayout(itemCount: 4, itemBuilder: (_,index)=>const EProductCardVertical()),
+                ],
+              ),
             ),
           ],
         ),
@@ -68,5 +73,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

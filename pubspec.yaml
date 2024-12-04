@@ -80,6 +80,7 @@ flutter:
     - assets/images/content/
     - assets/images/animations/
     - assets/icons/categories/
+    - assets/images/products/
 
   #-----------------LOCAL FONTS-----------------#
   fonts:
